@@ -1,0 +1,62 @@
+{
+  "name": "wgvmmig",
+  "id": "/subscriptions/2b80fbe4-9bdb-4152-883b-3304f3369d02/resourceGroups/mig-vm-test/providers/Microsoft.Compute/virtualMachines/wgvmmig",
+  "type": "Microsoft.Compute/virtualMachines",
+  "location": "eastus2",
+  "identity": {
+    "type": "SystemAssigned",
+    "principalId": "e10da85c-c53c-45ad-a44e-d01207bbdf55",
+    "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+  },
+  "properties": {
+    "vmId": "6d8437e8-445b-412e-ab25-21d077d63ab2",
+    "hardwareProfile": {
+      "vmSize": "Standard_B2s"
+    },
+    "storageProfile": {
+      "osDisk": {
+        "osType": "Windows",
+        "name": "wgvmdiskmig",
+        "createOption": "Attach",
+        "caching": "ReadWrite",
+        "managedDisk": {
+          "id": "/subscriptions/2b80fbe4-9bdb-4152-883b-3304f3369d02/resourcegroups/mig-vm-test/providers/Microsoft.Compute/disks/wgvmdiskmig"
+        }
+      },
+      "dataDisks": []
+    },
+    "networkProfile": {
+      "networkInterfaces": [
+        {
+          "id": "/subscriptions/2b80fbe4-9bdb-4152-883b-3304f3369d02/resourceGroups/mig-vm-test/providers/Microsoft.Network/networkInterfaces/wgvmmig420",
+          "properties": {
+            "deleteOption": "Detach"
+          }
+        }
+      ]
+    },
+    "diagnosticsProfile": {
+      "bootDiagnostics": {
+        "enabled": true
+      }
+    },
+    "provisioningState": "Succeeded"
+  },
+  "resources": [
+    {
+      "name": "AzurePolicyforWindows",
+      "id": "/subscriptions/2b80fbe4-9bdb-4152-883b-3304f3369d02/resourceGroups/mig-vm-test/providers/Microsoft.Compute/virtualMachines/wgvmmig/extensions/AzurePolicyforWindows",
+      "type": "Microsoft.Compute/virtualMachines/extensions",
+      "location": "eastus2",
+      "properties": {
+        "autoUpgradeMinorVersion": true,
+        "provisioningState": "Succeeded",
+        "enableAutomaticUpgrade": true,
+        "publisher": "Microsoft.GuestConfiguration",
+        "type": "ConfigurationforWindows",
+        "typeHandlerVersion": "1.1",
+        "settings": {}
+      }
+    }
+  ]
+}
